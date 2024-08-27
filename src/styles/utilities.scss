@@ -1,0 +1,270 @@
+/* Importar fuentes */
+@font-face {
+  font-family: "Anton";
+  src: url("/src/fonts/Anton-Regular.woff2") format("woff2"),
+    url("/src/fonts/Anton-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Krona One";
+  src: url("/src/fonts/KronaOne-Regular.woff2") format("woff2"),
+    url("/src/fonts/KronaOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("/src/fonts/MontserratAlternates-Regular.woff2") format("woff2"),
+    url("/src/fonts/MontserratAlternates-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("/src/fonts/MontserratAlternates-Semibold.woff2") format("woff2"),
+    url("/src/fonts/MontserratAlternates-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("/src/fonts/MontserratAlternates-Medium.woff2") format("woff2"),
+    url("/src/fonts/MontserratAlternates-Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Estilos generales */
+.div-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 1279px) {
+  .div-hero {
+    visibility: hidden;
+  }
+}
+
+.h2-hero,
+.h2-education {
+  font-family: "Krona One";
+}
+
+@media (max-width: 767px) {
+  .h2-hero {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+}
+
+.button-light,
+.button-dark {
+  margin: 14px;
+  height: 76px;
+  font-family: "Krona One";
+  font-size: 24px;
+  flex-wrap: nowrap;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1),
+    0 10px 3px -6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1279px) {
+  .button-light,
+  .button-dark {
+    width: 360px;
+  }
+}
+
+.button-light {
+  background-color: #fff;
+}
+
+.button-light:hover {
+  background-color: #e0e0e0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 0px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 20px 0 rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.button-dark:hover {
+  background-color: #000;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 0px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 20px 0 rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p-text-1 {
+  width: 316px;
+  font-family: "Montserrat Alternates Medium";
+  font-size: 20px;
+  text-align: center;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
+    drop-shadow(0 6px 1px rgba(0, 0, 0, 0.1));
+}
+
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-text {
+  z-index: -1;
+  font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  animation: carousel 10s linear infinite;
+  user-select: none;
+}
+
+@keyframes carousel {
+  from {
+    transform: translateX(160%);
+  }
+  to {
+    transform: translateX(-150%);
+  }
+}
+
+#cube-container {
+  z-index: 2;
+}
+
+.h2-container {
+  max-width: 700px;
+  overflow: hidden;
+}
+
+.h2-about {
+  display: inline-block;
+  font-family: "Krona One";
+  animation: carousel-animation 5s linear infinite;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.05)),
+    drop-shadow(0 6px 3px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes carousel-animation {
+  from {
+    transform: translateX(160%);
+  }
+  to {
+    transform: translateX(-160%);
+  }
+}
+
+.p-about {
+  font-family: "Montserrat Alternates Medium";
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.button-about {
+  font-family: "Montserrat Alternates Medium";
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button-about:hover {
+  background: linear-gradient(to right, black, gray);
+  color: #fff;
+}
+
+.button-about::before {
+  content: "My Education 📙✨";
+}
+
+.button-about:hover::before {
+  content: "My Education 😝🚀";
+}
+
+.span-section-3 {
+  font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  color: #fff;
+}
+
+.btn-container {
+  width: 300px;
+  height: 660px;
+  border: 3px solid #000;
+  border-radius: 1.5rem;
+  transform: skewX(-12deg);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media (max-width: 479px) {
+  .btn-container {
+    width: 100px;
+    height: 400px;
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .btn-container {
+    width: 160px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 1140px) {
+  .btn-container {
+    transform: skewX(-6deg);
+  }
+}
+
+.btn-container img {
+  filter: grayscale(100%);
+}
+
+.btn-container:hover img {
+  filter: grayscale(0%);
+}
+
+.img-wrapper {
+  transform: skewX(12deg) scale(1.5);
+}
+
+@media (max-width: 640px) {
+  .img-wrapper {
+    transform: skewX(12deg) scale(2.5);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .img-wrapper {
+    transform: skewX(12deg) scale(1.8);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+  .img-wrapper {
+    transform: skewX(12deg) scale(2.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .img-wrapper {
+    transform: skewX(12deg) scale(1.5);
+  }
+}

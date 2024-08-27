@@ -1,0 +1,118 @@
+/* Styles for sticky navigation bar */
+.navbar-with-bg {
+  position: sticky;
+  top: 0;
+  height: 54px;
+  color: #f6f6f6;
+  padding-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+
+.navbar-with-bg::before,
+.navbar-with-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: #222;
+  z-index: -1;
+}
+
+.navbar-with-bg::before {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
+/* Styles for navigation button */
+.ul-button {
+  min-width: 41px;
+  min-height: 41px;
+  background-color: #fff;
+  border: 3px solid #2b2b2b;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-right: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide navigation button on large screens */
+@media (min-width: 1023px) {
+  .ul-button {
+    visibility: hidden;
+  }
+}
+
+/* Styles for section backgrounds */
+.section-bg {
+  z-index: 0;
+}
+
+.section-bg::before,
+.section-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: #e3e3e3;
+  z-index: -1;
+}
+
+.section-bg::before {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
+.section-bg-3 {
+  z-index: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background-color: #e3e3e3;
+}
+
+.section-bg-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+  background-image: url(src/imgs/designer_word.png);
+  background-size: 134rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+/* Styles for sections with alternative backgrounds */
+.section-bg-2,
+.section-bg-4 {
+  z-index: 0;
+}
+
+.section-bg-2::before,
+.section-bg-2::after,
+.section-bg-4::before,
+.section-bg-4::after {
+  background-color: #f6f6f6;
+}
+
+/* Styles for centering a span element */
+.span-number {
+  margin: 0 auto;
+}

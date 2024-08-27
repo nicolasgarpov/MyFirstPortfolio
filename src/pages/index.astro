@@ -1,123 +1,221 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/components.scss";
+import "../styles/utilities.scss";
+import Image from "astro/components/Image.astro";
+import surpriseHero from "../../src/imgs/my-emoji-surprise-transformed.png";
+import nicolasImage from "../../src/imgs/imagenmiaweb.png";
+import GlassDonut from "../components/3dMesh.vue";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Nicolas Poveda">
+  <div class="min-w-[320px] max-w-[1440px] m-auto">
+    <nav class="navbar-with-bg">
+      <Nav />
+      <button class="ul-button">
+        <Image src="/menu-2.svg" alt="Menu Icon" height="28" width="28" />
+      </button>
+    </nav>
+    <main>
+      <section
+        class="section-bg relative min-h-[400px] max-h-[885px] flex justify-center items-center"
+      >
+        <div class="carousel-container min-w-[100VW] mx-auto">
+          <span
+            class="carousel-text text-nowrap select-none flex justify-center items-center font-normal text-[100vw] sm:text-[700px] md:text-[800px] lg:text-[900px] xl:text-[1000px] text-[#eaeaea]"
+            >DEVELOPER</span
+          >
+        </div>
+        <div class="div-hero absolute bottom-[300px] left-[10px] z-[1]">
+          <button class="button-light">View Projects</button>
+          <p class="p-text-1 font-semibold">
+            Crafting captivating digital experiences
+          </p>
+        </div>
+        <div class="div-hero absolute bottom-[180px] right-[10px] z-[1]">
+          <button class="button-dark">Get in touch</button>
+        </div>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+        <div class="surprise-hero bottom-0 m-auto absolute">
+          <div class="m-auto z-[1]">
+            <h2 class="h2-hero font-semibold text-[36px] text-center">
+              Hi, Im <br /> Nicolas Poveda
+            </h2>
+          </div>
+          <Image
+            src={surpriseHero}
+            alt="Surprise"
+            class="surprise-hero bottom-0 m-auto relative w-[100%] h-auto max-w-[640px]"
+            draggable="false"
+          />
+        </div>
+      </section>
+    </main>
+
+    <section class="section-bg-2 relative min-h-[885px] max-w-full px-6 py-28">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Elemento 1 -->
+        <div class="md:col-span-1 md:row-span-1">
+          <div class="max-w-[680px] mb-[40px]">
+            <svg width="auto" height="10" class="mb-[20px]">
+              <line
+                x1="0"
+                y1="5"
+                x2="680"
+                y2="5"
+                stroke="black"
+                stroke-width="2"></line>
+            </svg>
+            <div
+              class="span-number text-[15px] flex justify-between items-center"
+            >
+              <p>(THE STORY)</p>
+              <span
+                class="w-16 h-7 border-[1px] border-black rounded-2xl flex items-center justify-center"
+                >01</span
+              >
+            </div>
+            <div class="h2-container">
+              <h2
+                class="h2-about text-[38px] sm:text-xl md:text-3xl lg:text-6xl"
+              >
+                ABOUT ME
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elemento 2 -->
+        <div class="md:col-span-1 md:row-span-3 mx-auto">
+          <Image
+            src={nicolasImage}
+            alt="Surprise"
+            class="w-full h-auto max-w-[500px] object-contain"
+            draggable="false"
+          />
+          <Image
+            src="/arrowDownRight.svg"
+            alt="Menu Icon"
+            height="80"
+            width="80"
+            class="absolute rotate-45 bottom-14 right-10 hidden lg:block"
+          />
+        </div>
+
+        <!-- Elemento 3 -->
+        <div class="md:col-span-1 md:row-span-2">
+          <p class="p-about indent-14 leading-loose">
+            As a front-end web developer, I specialize in creating exceptional
+            digital experiences tailored to your needs. I stay up-to-date with
+            the latest web technologies and design trends to deliver visually
+            striking, user-friendly sites.
+            <br /><br />
+            Whether you need a landing page or a complex web app, I can work independently
+            or as part of a team to bring your ideas to life. My goal is to craft
+            solutions that exceed your expectations and provide a seamless user experience.
+          </p>
+          <button
+            class="button-about mt-16 w-auto p-3.5 border-[1px] border-black rounded-3xl flex justify-center"
+          >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg-3 relative px-6 py-28">
+      <div
+        class="span-number text-[15px] flex justify-between items-center align-middle font-semibold max-w-[68rem] md:pl-40 pl-10 p-4"
+      >
+        <p
+          class="h-7 border-[2px] border-black rounded-2xl px-3 flex items-center justify-center bg-white"
+        >
+          THE PROJECTS
+        </p>
+        <span
+          class="w-16 h-7 border-[2px] border-black rounded-2xl flex items-center justify-center bg-white"
+          >02</span
+        >
+      </div>
+      <div class="flex justify-center">
+        <div class="relative mx-4 btn-container btn-1">
+          <div class="absolute inset-0 rounded-lg shadow-lg img-wrapper">
+            <img
+              src="https://w0.peakpx.com/wallpaper/484/566/HD-wallpaper-car-nice-tuning.jpg"
+              alt="Imagen de fondo"
+              class="h-full w-full object-cover img-transform"
+            />
+          </div>
+        </div>
+        <div class="relative mx-4 btn-container btn-2">
+          <div class="absolute inset-0 rounded-lg shadow-lg img-wrapper">
+            <img
+              src="https://w0.peakpx.com/wallpaper/484/566/HD-wallpaper-car-nice-tuning.jpg"
+              alt="Imagen de fondo"
+              class="h-full w-full object-cover img-transform"
+            />
+          </div>
+        </div>
+        <div class="relative mx-4 btn-container btn-3">
+          <div class="absolute inset-0 rounded-lg shadow-lg img-wrapper">
+            <img
+              src="https://w0.peakpx.com/wallpaper/484/566/HD-wallpaper-car-nice-tuning.jpg"
+              alt="Imagen de fondo"
+              class="h-full w-full object-cover img-transform"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 relative min-h-[885px] max-w-full px-6 py-28">
+      <h2 class="h2-hero text-[11.5rem]">EDUCATION</h2>
+
+      <!-- Educación 2023 - Presente -->
+      <h3>2023 - Present</h3>
+      <ul>
+        <li>Independent learning in front-end and back-end development</li>
+        <li>Knowledge in HTML, CSS, Sass, Tailwind, React, Next.js, Astro</li>
+        <li>
+          Introduction to Three.js and Blender for incorporating 3D elements
+        </li>
+        <li>Ability to design and develop front-end websites</li>
+        <li>Skills to receive designs and implement them in the front-end</li>
+      </ul>
+
+      <!-- Educación 2022 - 2023 -->
+      <h3>2022 - 2023</h3>
+      <ul>
+        <li>
+          Obtained the Responsive Web Design certification from FreeCodeCamp
+        </li>
+        <li>
+          Started "The Odin Project" course and completed the front-end section
+        </li>
+      </ul>
+
+      <!-- Educación 2021 - Presente -->
+      <h3>2021 - Present</h3>
+      <p>Multimedia Engineering at UNAD University</p>
+      <ul>
+        <li>Learning Figma</li>
+        <li>Knowledge in typography and magazine layout</li>
+        <li>Fundamentals of algebra and physics</li>
+        <li>Interest in professional drawing and design</li>
+        <li>Acquisition of skills in composition and design</li>
+        <li>
+          Proficiency in tools like Paint 3D, Canva, and basic photo editing
+        </li>
+      </ul>
+
+      <!-- Educación 2016 - 2019 -->
+      <h3>2016 - 2019</h3>
+      <p>High School Education</p>
+      <ul>
+        <li>Introduction to programming in C#, HTML, and CSS</li>
+        <li>Basic knowledge of software and hardware</li>
+        <li>Assembling and disassembling computers</li>
+        <li>Installation and uninstallation of operating systems</li>
+      </ul>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,77 @@
+---
+// Importa cualquier biblioteca o lógica que necesites para el formulario
+import { z } from "zod";
+
+// Define un esquema de validación con Zod
+const formSchema = z.object({
+  name: z.string().min(3, "El nombre debe tener al menos 3 caracteres"),
+  email: z.string().email("Ingresa un correo electrónico válido"),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
+});
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contacto - Mi Portafolio</title>
+  </head>
+  <body>
+    <header>
+      <!-- Tu código de encabezado aquí -->
+    </header>
+    <main class="bg-gray-100 py-8 px-4">
+      <h1 class="text-2xl font-bold mb-4">Contáctame</h1>
+      <p class="text-gray-700 mb-6">
+        Si tienes alguna pregunta o quieres trabajar juntos, no dudes en
+        enviarme un mensaje.
+      </p>
+
+      <form
+        method="POST"
+        class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto"
+      >
+        <div class="mb-4">
+          <label for="name" class="block font-bold mb-2">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="border rounded-md p-2 w-full"
+            placeholder="Ingresa tu nombre"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block font-bold mb-2">Correo Electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="border rounded-md p-2 w-full"
+            placeholder="Ingresa tu correo electrónico"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block font-bold mb-2">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            class="border rounded-md p-2 w-full h-32"
+            placeholder="Escribe tu mensaje aquí"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md"
+        >
+          Enviar
+        </button>
+      </form>
+    </main>
+    <footer>
+      <!-- Tu código de pie de página aquí -->
+    </footer>
+  </body>
+</html>
