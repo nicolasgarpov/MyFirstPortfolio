@@ -4,7 +4,7 @@ const btn3 = document.querySelector(".btn-3");
 const parentSection = document.querySelector(".section-bg-3");
 
 btn1.addEventListener("mouseenter", () => {
-    parentSection.style.backgroundColor = "#FFD700";
+    parentSection.style.backgroundColor = "#FEFAE1";
     parentSection.style.backgroundImage = "none"; 
     parentSection.style.backgroundRepeat = "no-repeat"; 
   });
@@ -14,7 +14,7 @@ btn1.addEventListener("mouseenter", () => {
     parentSection.style.backgroundRepeat = "no-repeat"; 
   });
 btn2.addEventListener("mouseenter", () => {
-    parentSection.style.backgroundColor = "#4169E1"; 
+    parentSection.style.backgroundColor = "#E1F4FE"; 
     parentSection.style.backgroundImage = "none"; 
     parentSection.style.backgroundRepeat = "no-repeat";
 });
@@ -25,7 +25,7 @@ btn2.addEventListener("mouseleave", () => {
 });
 
 btn3.addEventListener("mouseenter", () => {
-    parentSection.style.backgroundColor = "#DC143C"; 
+    parentSection.style.backgroundColor = "#FEE1E1"; 
     parentSection.style.backgroundImage = "none"; 
     parentSection.style.backgroundRepeat = "no-repeat"; 
 });

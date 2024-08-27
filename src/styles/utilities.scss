@@ -60,7 +60,8 @@
 }
 
 .h2-hero,
-.h2-education {
+.h2-education,
+.tech-title {
   font-family: "Krona One";
 }
 
@@ -188,13 +189,13 @@
   color: #fff;
 }
 
-.button-about::before {
-  content: "My Education 📙✨";
-}
+// .button-about::before {
+//   content: "My Education 📙✨";
+// }
 
-.button-about:hover::before {
-  content: "My Education 😝🚀";
-}
+// .button-about:hover::before {
+//   content: "My Education 😝🚀";
+// }
 
 .span-section-3 {
   font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold",
@@ -220,10 +221,10 @@
   }
 }
 
-@media (min-width: 480px) and (max-width: 640px) {
+@media (min-width: 200px) and (max-width: 499px) {
   .btn-container {
-    width: 160px;
-    height: 500px;
+    width: 250px;
+    height: 620px;
   }
 }
 
@@ -245,7 +246,7 @@
   transform: skewX(12deg) scale(1.5);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 499px) {
   .img-wrapper {
     transform: skewX(12deg) scale(2.5);
   }
@@ -257,7 +258,7 @@
   }
 }
 
-@media (min-width: 641px) and (max-width: 767px) {
+@media (min-width: 500px) and (max-width: 767px) {
   .img-wrapper {
     transform: skewX(12deg) scale(2.1);
   }
@@ -266,5 +267,49 @@
 @media (min-width: 1024px) {
   .img-wrapper {
     transform: skewX(12deg) scale(1.5);
+  }
+}
+
+.svg-container {
+  font-family: "Montserrat Alternates";
+  font-size: 34px;
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+}
+
+@media (max-width: 962px) {
+  .svg-container {
+    display: none;
+  }
+}
+.textcircle {
+  animation: rotate 25s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tech-icon {
+  font-family: "Montserrat Alternates";
+}
+
+.btn-container-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 499px) {
+  .btn-container-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
 }
