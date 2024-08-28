@@ -7,19 +7,19 @@ body {
 
 /* Navbar principal */
 .navbar-with-bg {
-  position: sticky;
-  top: 0;
   z-index: 1000;
   background-color: #222;
   color: #f6f6f6;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Cambiado a center para centrar los enlaces */
   align-items: center;
   padding: 1rem 20px;
   width: 100%;
   height: 54px;
   box-sizing: border-box;
-  position: relative; /* Asegura que los pseudo-elementos se posicionen correctamente */
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .navbar-with-bg::before,
@@ -38,7 +38,7 @@ body {
 /* Menu de navegación */
 .nav-menu {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Centra los elementos dentro del menú */
   align-items: center;
   list-style: none;
   margin: 0;
@@ -55,7 +55,6 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   position: relative;
-  /* Eliminado el efecto de subrayado en hover */
 }
 
 /* Botón de toggle para pantallas pequeñas */
