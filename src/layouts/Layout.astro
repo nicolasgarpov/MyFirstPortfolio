@@ -34,29 +34,38 @@ import "../styles/utilities.scss";
       <slot />
     </div>
     <script>
+      // Añade esta línea al principio de tu archivo TypeScript
+      /// <reference lib="dom" />
+
       // Función para cargar el script después de que se cargue el DOM
-      function loadScript(src) {
+      function loadScript(src: string): Promise<void> {
         return new Promise((resolve, reject) => {
           const script = document.createElement("script");
           script.src = src;
-          script.onload = resolve;
-          script.onerror = reject;
+          script.onload = () => resolve();
+          script.onerror = (error) => reject(error);
           document.body.appendChild(script);
         });
       }
 
       window.addEventListener("load", async () => {
-        await loadScript("/src/scripts/bgSectionChange.js");
+        try {
+          await loadScript("/src/scripts/bgSectionChange.js");
 
-        const btn1 = document.querySelector(".btn-1");
-        const btn2 = document.querySelector(".btn-2");
-        const btn3 = document.querySelector(".btn-3");
-        const parentSection = document.querySelector(".section-bg-3");
+          const btn1 = document.querySelector(".btn-1") as HTMLElement | null;
+          const btn2 = document.querySelector(".btn-2") as HTMLElement | null;
+          const btn3 = document.querySelector(".btn-3") as HTMLElement | null;
+          const parentSection = document.querySelector(
+            ".section-bg-3"
+          ) as HTMLElement | null;
 
-        console.log("btn1:", btn1);
-        console.log("btn2:", btn2);
-        console.log("btn3:", btn3);
-        console.log("parentSection:", parentSection);
+          console.log("btn1:", btn1);
+          console.log("btn2:", btn2);
+          console.log("btn3:", btn3);
+          console.log("parentSection:", parentSection);
+        } catch (error) {
+          console.error("Error loading script:", error);
+        }
       });
     </script>
   </body>

@@ -1,9 +1,8 @@
 ---
-// Importa cualquier biblioteca o lógica que necesites para el formulario
 import { z } from "zod";
 
 // Define un esquema de validación con Zod
-const formSchema = z.object({
+export const formSchema = z.object({
   name: z.string().min(3, "El nombre debe tener al menos 3 caracteres"),
   email: z.string().email("Ingresa un correo electrónico válido"),
   message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
@@ -42,7 +41,9 @@ const formSchema = z.object({
         </div>
 
         <div class="mb-4">
-          <label for="email" class="block font-bold mb-2">Correo Electrónico</label>
+          <label for="email" class="block font-bold mb-2"
+            >Correo Electrónico</label
+          >
           <input
             type="email"
             id="email"
@@ -58,8 +59,7 @@ const formSchema = z.object({
             id="message"
             name="message"
             class="border rounded-md p-2 w-full h-32"
-            placeholder="Escribe tu mensaje aquí"
-          ></textarea>
+            placeholder="Escribe tu mensaje aquí"></textarea>
         </div>
 
         <button

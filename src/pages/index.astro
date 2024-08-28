@@ -1,5 +1,4 @@
 ---
-import Nav from "../components/Nav.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/components.scss";
 import "../styles/utilities.scss";
@@ -17,13 +16,12 @@ import reactIcon from "../imgs/section4/react.png";
 import nextIcon from "../imgs/section4/next.png";
 import astroIcon from "../imgs/section4/astro.png";
 import blenderIcon from "../imgs/section4/blender.png";
-import threejsIcon from "../imgs/section4/threejs.png";
 ---
 
 <Layout title="Nicolas Poveda">
   <div class="min-w-[320px] max-w-[1440px] m-auto">
     <nav class="navbar-with-bg">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
       </label>
@@ -34,7 +32,6 @@ import threejsIcon from "../imgs/section4/threejs.png";
         <li><a href="/contact">CONTACT</a></li>
       </ul>
     </nav>
-    
 
     <main>
       <section
@@ -85,7 +82,6 @@ import threejsIcon from "../imgs/section4/threejs.png";
             <!-- Contenedor para la dona ASCII 3D -->
             <foreignObject x="100" y="100" width="300" height="300">
               <div
-                xmlns="http://www.w3.org/1999/xhtml"
                 id="ascii-donut"
                 style="
       font-family: 'Courier New', monospace;
@@ -107,59 +103,79 @@ import threejsIcon from "../imgs/section4/threejs.png";
           </svg>
 
           <script>
-            const pre = document.getElementById("ascii-donut");
-            const WIDTH = 60;
-            const HEIGHT = 30;
-            let z = 0,
-              y = 0;
+            window.onload = () => {
+              const pre = document.getElementById("ascii-donut");
 
-            function updateDonut() {
-              z += 0.07;
-              y += 0.03;
-              const a = new Array(HEIGHT * WIDTH).fill(" ");
-              const r = new Array(HEIGHT * WIDTH).fill(0);
-              const t = Math.cos(z);
-              const e = Math.sin(z);
-              const n = Math.cos(y);
-              const o = Math.sin(y);
+              if (!pre) {
+                console.error(
+                  "El elemento con id 'ascii-donut' no fue encontrado."
+                );
+                return;
+              }
 
-              for (let s = 0; s < 6.28; s += 0.07) {
-                const c = Math.cos(s);
-                const h = Math.sin(s);
-                for (let s = 0; s < 6.28; s += 0.02) {
-                  const v = Math.sin(s);
-                  const M = Math.cos(s);
-                  const i = c + 2;
-                  const l = 1 / (v * i * e + h * t + 5);
-                  const p = v * i * t - h * e;
-                  const d =
-                    0 | (WIDTH / 2 + (WIDTH / 4) * l * (M * i * n - p * o));
-                  const m =
-                    0 | (HEIGHT / 2 + (HEIGHT / 4) * l * (M * i * o + p * n));
-                  const f =
-                    0 |
-                    (8 *
-                      ((h * e - v * c * t) * n -
-                        v * c * e -
-                        h * t -
-                        M * c * o));
-                  const y = d + WIDTH * m;
-                  if (m < HEIGHT && m >= 0 && d >= 0 && d < WIDTH && l > r[y]) {
-                    r[y] = l;
-                    a[y] = ".,-~:;=!*#$@"[f > 0 ? f : 0];
+              const WIDTH = 60;
+              const HEIGHT = 30;
+              let z = 0,
+                y = 0;
+
+              function updateDonut() {
+                z += 0.07;
+                y += 0.03;
+                const a = new Array(HEIGHT * WIDTH).fill(" ");
+                const r = new Array(HEIGHT * WIDTH).fill(0);
+                const t = Math.cos(z);
+                const e = Math.sin(z);
+                const n = Math.cos(y);
+                const o = Math.sin(y);
+
+                for (let s = 0; s < 6.28; s += 0.07) {
+                  const c = Math.cos(s);
+                  const h = Math.sin(s);
+                  for (let s2 = 0; s2 < 6.28; s2 += 0.02) {
+                    const v = Math.sin(s2);
+                    const M = Math.cos(s2);
+                    const i = c + 2;
+                    const l = 1 / (v * i * e + h * t + 5);
+                    const p = v * i * t - h * e;
+                    const d = Math.floor(
+                      WIDTH / 2 + (WIDTH / 4) * l * (M * i * n - p * o)
+                    );
+                    const m = Math.floor(
+                      HEIGHT / 2 + (HEIGHT / 4) * l * (M * i * o + p * n)
+                    );
+                    const f = Math.floor(
+                      8 *
+                        ((h * e - v * c * t) * n -
+                          v * c * e -
+                          h * t -
+                          M * c * o)
+                    );
+                    const y = d + WIDTH * m;
+                    if (
+                      m < HEIGHT &&
+                      m >= 0 &&
+                      d >= 0 &&
+                      d < WIDTH &&
+                      l > r[y]
+                    ) {
+                      r[y] = l;
+                      a[y] = ".,-~:;=!*#$@"[f > 0 ? f : 0];
+                    }
                   }
                 }
+
+                let output = "";
+                for (let i = 0; i < HEIGHT; i++) {
+                  output += a.slice(i * WIDTH, (i + 1) * WIDTH).join("") + "\n";
+                }
+
+                // Aquí le decimos a TypeScript que sabemos que 'pre' no es nulo
+                (pre as HTMLElement).textContent = output;
               }
 
-              let output = "";
-              for (let i = 0; i < HEIGHT; i++) {
-                output += a.slice(i * WIDTH, (i + 1) * WIDTH).join("") + "\n";
-              }
-              pre.textContent = output;
-            }
-
-            // Actualizar la dona cada 50ms
-            setInterval(updateDonut, 50);
+              // Actualizar la dona cada 50ms
+              setInterval(updateDonut, 50);
+            };
           </script>
         </div>
 
