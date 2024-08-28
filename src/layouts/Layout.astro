@@ -18,15 +18,10 @@ import "../styles/utilities.scss";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
-    <script is:inline src="/src/scripts/fontLoader.js" defer></script>
-    <script is:inline src="/src/scripts/deselectText.js" defer></script>
-    <script is:inline src="/src/scripts/positionScroll.js" defer></script>
   </head>
   <body>
     <div id="main-content">
       <slot />
     </div>
-    
   </body>
 </html>

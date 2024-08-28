@@ -4,6 +4,5 @@ import vue from "@astrojs/vue";
 
 export default defineConfig({
   integrations: [tailwind(), vue()],
-  base: '/MyFirstPortfolio/', // Reemplaza con el nombre de tu repositorio
 });
 
