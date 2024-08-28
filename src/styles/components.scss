@@ -45,7 +45,7 @@ body {
   padding: 0;
 }
 
-.nav-menu li {
+.nav-menu li:not(:first-child) {
   margin-left: 2rem;
 }
 
@@ -168,6 +168,7 @@ body {
 
 .section-bg-3 {
   background-color: #e3e3e3;
+  z-index: 1; /* Asegura que el fondo gris esté en un nivel adecuado */
 }
 
 .section-bg-3::after {
@@ -177,12 +178,12 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  z-index: -1;
   background-size: 134rem;
   background-position: center;
   background-repeat: no-repeat;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  z-index: -1; /* Imagen detrás del contenido adicional pero delante del fondo gris */
 }
 
 @media (min-width: 768px) {
@@ -219,6 +220,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Asegura que el botón esté en el flujo de los elementos */
 }
 
 .auxiliar-p {
