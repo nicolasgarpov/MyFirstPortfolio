@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-
 import vue from "@astrojs/vue";
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), vue()]
+  integrations: [tailwind(), vue()],
+  base: '/MyFirstPortfolio/', // Reemplaza con el nombre de tu repositorio
 });
+

@@ -22,15 +22,9 @@ import "../styles/utilities.scss";
     <script is:inline src="/src/scripts/fontLoader.js" defer></script>
     <script is:inline src="/src/scripts/deselectText.js" defer></script>
     <script is:inline src="/src/scripts/positionScroll.js" defer></script>
-
-    <style>
-      #main-content.hidden {
-        visibility: hidden;
-      }
-    </style>
   </head>
   <body>
-    <div id="main-content" class="hidden">
+    <div id="main-content">
       <slot />
     </div>
     <script>
