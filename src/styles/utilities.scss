@@ -246,14 +246,6 @@
   }
 }
 
-.btn-container img {
-  filter: grayscale(100%);
-}
-
-.btn-container:hover img {
-  filter: grayscale(0%);
-}
-
 .img-wrapper {
   transform: skewX(12deg) scale(1.6);
 }
